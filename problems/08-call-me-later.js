@@ -1,4 +1,24 @@
-// Your code here 
+class CallCenter {
+	constructor(name) {
+		this.name = name
+	}
+	sayHello() {
+		console.log(`Hello this is ${this.name}`)
+	}
+	// 	callMeLater(delay) {
+	// 		setTimeout(() => {
+	// 		this.sayHello()
+	// 	}, delay)
+	// }
+
+	callMeLater(delay) {
+		setTimeout(this.sayHello.bind(this), delay)
+	}
+}
+
+let judy = new CallCenter("Judy");
+judy.sayHello();         // prints "Hello this is Judy"
+judy.callMeLater(1000);  // waits one second then prints "Hello this is Judy"
 
 
 /*****************************************************************************/
